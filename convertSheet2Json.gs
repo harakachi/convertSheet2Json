@@ -23,6 +23,11 @@ function convert(sheetName) {
     var rowNum = 1
     var range = sheet.getRange(rowIndex, colStartIndex, rowNum, sheet.getLastColumn())
     var values = range.getValues()
+    var comments = range.getComments()
+    //セルデータは無いがメモがある場合、メモを追加
+    for(var i=0; i<values[0].length; i++) {
+      if(values[0][i] == "") values[0][i] = comments[0][i]
+    }
     rowValues.push(values[0])
   }
 
