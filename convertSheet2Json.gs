@@ -1,6 +1,6 @@
 function myFunction_() {
   
-  var json = convertSheet2Json("テスト")
+  var json = convert("テスト")
   
   Logger.log(json)
   
